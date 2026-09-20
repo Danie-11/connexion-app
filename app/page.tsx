@@ -12,7 +12,7 @@ export default function Home() {
     <main>
       <section className="hero" id="top">
         <div className="hero-bg" aria-hidden="true">
-          <img src="https://images.stockcake.com/public/7/8/a/78a1f005-f14d-4927-aea5-aaf2a8954715_small/dolphins-at-sunset-stockcake.jpg" alt="" />
+          <img src="https://images.stockcake.com/public/e/c/3/ec3b01eb-6741-4057-ad6a-1eb8b6f33fdb_large/dolphins-at-sunset-stockcake.jpg" alt="" />
         </div>
         <div className="hero-overlay" aria-hidden="true" />
 
