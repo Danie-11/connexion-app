@@ -10,33 +10,41 @@ const intentions = [
 export default function Home() {
   return (
     <main>
-      <section className="hero">
+      <section className="hero" id="top">
         <div className="hero-bg" aria-hidden="true">
-          <img src="/connexion-app/connexion-hero.svg" alt="" />
+          <img src="https://images.stockcake.com/public/7/8/a/78a1f005-f14d-4927-aea5-aaf2a8954715_small/dolphins-at-sunset-stockcake.jpg" alt="" />
         </div>
+        <div className="hero-overlay" aria-hidden="true" />
 
         <nav className="nav">
           <a className="brand" href="#top"><span className="brand-mark">✦</span><span>Connexion</span></a>
-          <a className="login" href="#connexion">J’ai déjà un compte <span>→</span></a>
+          <div className="nav-right">
+            <button className="language" type="button" aria-label="Langue française">FR <span>⌄</span></button>
+            <a className="login" href="#connexion">J’ai déjà un compte <span>→</span></a>
+          </div>
         </nav>
 
-        <div className="hero-content" id="top">
+        <div className="hero-content">
           <p className="script">Plus qu’une rencontre,<br />une belle énergie</p>
+
           <div className="hero-copy">
-            <p className="eyebrow">UNE AUTRE FAÇON DE SE RENCONTRER</p>
-            <h1>Des personnes.<br />Des affinités.<br /><em>Une connexion choisie.</em></h1>
-            <p className="intro">Une autre façon de rencontrer. Vous choisissez ce que vous partagez, avec qui vous échangez et jusqu’où vous souhaitez aller.</p>
+            <h1>Connexion</h1>
+            <p className="tagline">Des personnes. Des affinités.<br /><em>Une connexion choisie.</em></p>
+            <p className="intro">Une autre façon de rencontrer.<br />Vous choisissez ce que vous partagez,<br />avec qui vous échangez et jusqu’où<br />vous souhaitez aller.</p>
+
             <div className="actions">
               <a className="primary" href="#intentions">Créer mon profil <span>→</span></a>
               <a className="secondary" href="#connexion">J’ai déjà un compte <span>→</span></a>
             </div>
           </div>
+
           <div className="trust">
-            <div><strong>⌑</strong><b>Confidentialité</b><span>Vos informations personnelles restent protégées.</span></div>
+            <div><strong>♧</strong><b>Confidentialité</b><span>Vos informations personnelles restent protégées.</span></div>
             <div><strong>♡</strong><b>Consentement mutuel</b><span>Une connexion n’est créée que si les deux personnes l’acceptent.</span></div>
-            <div><strong>♢</strong><b>Sécurité</b><span>Vous pouvez signaler, bloquer ou mettre une conversation en pause.</span></div>
+            <div><strong>♢</strong><b>Sécurité</b><span>Vous pouvez signaler, bloquer ou mettre une conversation en pause à tout moment.</span></div>
           </div>
         </div>
+
         <p className="script script-bottom">Des rencontres<br />qui ont du sens</p>
       </section>
 
@@ -46,7 +54,9 @@ export default function Home() {
           <h2>Vous choisissez ce que vous recherchez.</h2>
           <p>Amour, amitié, projet, travail, passions ou simplement une conversation : chaque intention est traitée séparément.</p>
         </div>
-        <div className="cards">{intentions.map((item) => <article className="card" key={item.label}><span className="card-icon">{item.icon}</span><h3>{item.label}</h3><span className="arrow">→</span></article>)}</div>
+        <div className="cards">
+          {intentions.map((item) => <article className="card" key={item.label}><span className="card-icon">{item.icon}</span><h3>{item.label}</h3><span className="arrow">→</span></article>)}
+        </div>
       </section>
 
       <section className="principle" id="connexion">
