@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200">
+<defs>
+ <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f8e9dc"/><stop offset=".55" stop-color="#f7c9a9"/><stop offset="1" stop-color="#f2b48d"/></linearGradient>
+ <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b7c6c3"/><stop offset="1" stop-color="#537b7c"/></linearGradient>
+ <radialGradient id="sun"><stop stop-color="#fff9d9"/><stop offset=".45" stop-color="#ffe2a8" stop-opacity=".9"/><stop offset="1" stop-color="#f7c58e" stop-opacity="0"/></radialGradient>
+ <linearGradient id="dolphin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#234d62"/><stop offset=".55" stop-color="#416f82"/><stop offset="1" stop-color="#17384a"/></linearGradient>
+ <filter id="shadow"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#17384a" flood-opacity=".22"/></filter>
+</defs>
+<rect width="1600" height="1200" fill="url(#sky)"/>
+<circle cx="1120" cy="430" r="330" fill="url(#sun)"/>
+<circle cx="1120" cy="430" r="105" fill="#fff3c8" opacity=".92"/>
+<path d="M0 760 Q400 670 800 755 T1600 720 V1200 H0Z" fill="url(#sea)"/>
+<path d="M0 820 Q430 735 820 815 T1600 790" fill="none" stroke="#f9eee4" stroke-width="55" opacity=".72"/>
+<path d="M0 900 Q420 810 830 900 T1600 870" fill="none" stroke="#7d9998" stroke-width="65" opacity=".65"/>
+<path d="M0 1010 Q420 920 850 1005 T1600 970" fill="none" stroke="#dce1dc" stroke-width="38" opacity=".45"/>
+
+<g fill="none" stroke="#fff7e9" stroke-width="7" opacity=".65">
+ <circle cx="1120" cy="430" r="285"/>
+ <circle cx="1120" cy="430" r="300"/>
+</g>
+
+<!-- stylised dolphins forming the Connexion circle -->
+<g fill="url(#dolphin)" stroke="#163748" stroke-width="7" filter="url(#shadow)">
+ <g transform="translate(1120 145) rotate(5)">
+  <path d="M0 120 C-80 85 -105 10 -65 -48 C-37 -89 12 -72 8 -36 C3 -2 -24 13 -49 16 C-17 30 19 47 56 42 C94 37 124 8 137 -28 C142 29 108 88 57 108 C39 115 20 119 0 120Z"/>
+  <path d="M-59 -43 C-88 -75 -96 -106 -75 -123 C-52 -142 -23 -118 -30 -94 C-35 -77 -48 -61 -59 -43Z"/>
+  <path d="M74 55 C111 58 145 73 162 96 C129 102 97 94 70 77Z"/>
+ </g>
+ <g transform="translate(900 620) rotate(118)">
+  <path d="M0 120 C-80 85 -105 10 -65 -48 C-37 -89 12 -72 8 -36 C3 -2 -24 13 -49 16 C-17 30 19 47 56 42 C94 37 124 8 137 -28 C142 29 108 88 57 108 C39 115 20 119 0 120Z"/>
+  <path d="M-59 -43 C-88 -75 -96 -106 -75 -123 C-52 -142 -23 -118 -30 -94 C-35 -77 -48 -61 -59 -43Z"/>
+  <path d="M74 55 C111 58 145 73 162 96 C129 102 97 94 70 77Z"/>
+ </g>
+ <g transform="translate(1335 620) rotate(-118)">
+  <path d="M0 120 C-80 85 -105 10 -65 -48 C-37 -89 12 -72 8 -36 C3 -2 -24 13 -49 16 C-17 30 19 47 56 42 C94 37 124 8 137 -28 C142 29 108 88 57 108 C39 115 20 119 0 120Z"/>
+  <path d="M-59 -43 C-88 -75 -96 -106 -75 -123 C-52 -142 -23 -118 -30 -94 C-35 -77 -48 -61 -59 -43Z"/>
+  <path d="M74 55 C111 58 145 73 162 96 C129 102 97 94 70 77Z"/>
+ </g>
+</g>
+<g fill="#fff8e8" opacity=".7">
+ <circle cx="850" cy="230" r="5"/><circle cx="1450" cy="290" r="7"/><circle cx="780" cy="420" r="4"/><circle cx="1510" cy="530" r="5"/>
+</g>
+</svg>
