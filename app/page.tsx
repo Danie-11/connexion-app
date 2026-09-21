@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main>
       <section className="hero-reference" id="top">
-        <img className="reference-image" src="/connexion-app/connexion-reference.jpg" alt="Connexion — plus qu’une rencontre, une belle énergie" />
+        <img className="reference-image" src="/connexion-app/connexion-hero.svg" alt="Connexion — plus qu’une rencontre, une belle énergie" />
         <a className="hero-hotspot profile-hotspot" href="#intentions" aria-label="Créer mon profil" />
         <a className="hero-hotspot account-hotspot" href="#connexion" aria-label="J’ai déjà un compte" />
         <button className="hero-hotspot language-hotspot" type="button" aria-label="Langue française" />
