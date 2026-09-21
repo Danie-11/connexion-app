@@ -10,45 +10,11 @@ const intentions = [
 export default function Home() {
   return (
     <main>
-      <section className="hero" id="top">
-        <div className="hero-art" aria-hidden="true">
-          <img src="/connexion-app/connexion-hero.svg" alt="" />
-        </div>
-        <div className="hero-soften" aria-hidden="true" />
-
-        <nav className="nav">
-          <a className="brand" href="#top">
-            <span className="brand-mark">✦</span>
-            <span>Connexion</span>
-          </a>
-          <div className="nav-right">
-            <button className="language" type="button" aria-label="Langue française">FR <span>⌄</span></button>
-            <a className="login" href="#connexion">J’ai déjà un compte <span>→</span></a>
-          </div>
-        </nav>
-
-        <div className="hero-content">
-          <p className="script">Plus qu’une rencontre,<br />une belle énergie</p>
-
-          <div className="hero-copy">
-            <h1>Connexion</h1>
-            <p className="tagline">Des personnes. Des affinités.<br /><em>Une connexion choisie.</em></p>
-            <p className="intro">Une autre façon de rencontrer.<br />Vous choisissez ce que vous partagez,<br />avec qui vous échangez et jusqu’où<br />vous souhaitez aller.</p>
-
-            <div className="actions">
-              <a className="primary" href="#intentions">Créer mon profil <span>→</span></a>
-              <a className="secondary" href="#connexion">J’ai déjà un compte <span>→</span></a>
-            </div>
-          </div>
-
-          <div className="trust">
-            <div><strong>♧</strong><b>Confidentialité</b><span>Vos informations personnelles restent protégées.</span></div>
-            <div><strong>♡</strong><b>Consentement mutuel</b><span>Une connexion n’est créée que si les deux personnes l’acceptent.</span></div>
-            <div><strong>♢</strong><b>Sécurité</b><span>Vous pouvez signaler, bloquer ou mettre une conversation en pause à tout moment.</span></div>
-          </div>
-        </div>
-
-        <p className="script script-bottom">Des rencontres<br />qui ont du sens</p>
+      <section className="hero-reference" id="top">
+        <img className="reference-image" src="/connexion-app/connexion-reference.jpg" alt="Connexion — plus qu’une rencontre, une belle énergie" />
+        <a className="hero-hotspot profile-hotspot" href="#intentions" aria-label="Créer mon profil" />
+        <a className="hero-hotspot account-hotspot" href="#connexion" aria-label="J’ai déjà un compte" />
+        <button className="hero-hotspot language-hotspot" type="button" aria-label="Langue française" />
       </section>
 
       <section className="intentions" id="intentions">
