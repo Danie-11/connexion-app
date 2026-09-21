@@ -1,55 +1,56 @@
-const slides = Array.from(document.querySelectorAll('.slide'));
-const dots = Array.from(document.querySelectorAll('.dot'));
-const prevBtn = document.querySelector('[data-action="prev"]');
-const nextBtn = document.querySelector('[data-action="next"]');
+const screens = [...document.querySelectorAll('[data-screen]')];
+const state = { screen: 'home', nickname: '', intentions: new Set() };
+const history = [];
 
-let currentIndex = 0;
-
-function showSlide(index) {
-  currentIndex = (index + slides.length) % slides.length;
-
-  slides.forEach((slide, slideIndex) => {
-    slide.classList.toggle('is-active', slideIndex === currentIndex);
+function render() {
+  screens.forEach((screen) => {
+    const active = screen.dataset.screen === state.screen;
+    screen.hidden = !active;
+    screen.classList.toggle('is-active', active);
   });
-
-  dots.forEach((dot, dotIndex) => {
-    dot.classList.toggle('is-active', dotIndex === currentIndex);
+  document.querySelectorAll('[data-user]').forEach((element) => {
+    element.textContent = state.nickname ? `, ${state.nickname}` : '';
   });
+  const selections = document.querySelector('[data-selections]');
+  if (selections) selections.textContent = state.intentions.size ? [...state.intentions].join(', ') : 'aucun';
+  document.querySelectorAll('.intention-card').forEach((card) => {
+    card.classList.toggle('is-selected', state.intentions.has(card.dataset.intention));
+    card.setAttribute('aria-pressed', state.intentions.has(card.dataset.intention));
+  });
+  const continueButton = document.querySelector('.continue-button');
+  if (continueButton) continueButton.disabled = state.intentions.size === 0;
 }
 
-prevBtn?.addEventListener('click', () => {
-  showSlide(currentIndex - 1);
+function goTo(screen, addHistory = true) {
+  if (state.screen === screen) return;
+  if (addHistory) history.push(state.screen);
+  state.screen = screen;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  render();
+}
+
+document.addEventListener('click', (event) => {
+  const target = event.target.closest('[data-go]');
+  if (target) goTo(target.dataset.go);
+  if (event.target.closest('[data-back]')) {
+    goTo(history.pop() || 'home', false);
+  }
 });
 
-nextBtn?.addEventListener('click', () => {
-  showSlide(currentIndex + 1);
+document.querySelector('[data-form="profile"]')?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const formData = new FormData(event.currentTarget);
+  state.nickname = String(formData.get('nickname')).trim();
+  goTo('intentions');
 });
 
-dots.forEach((dot) => {
-  dot.addEventListener('click', () => {
-    showSlide(Number(dot.dataset.index));
+document.querySelectorAll('.intention-card').forEach((card) => {
+  card.addEventListener('click', () => {
+    const intention = card.dataset.intention;
+    if (state.intentions.has(intention)) state.intentions.delete(intention);
+    else state.intentions.add(intention);
+    render();
   });
 });
 
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'ArrowRight') showSlide(currentIndex + 1);
-  if (event.key === 'ArrowLeft') showSlide(currentIndex - 1);
-});
-
-let touchStartX = 0;
-
-window.addEventListener('touchstart', (event) => {
-  touchStartX = event.changedTouches[0].screenX;
-}, { passive: true });
-
-window.addEventListener('touchend', (event) => {
-  const touchEndX = event.changedTouches[0].screenX;
-  const delta = touchEndX - touchStartX;
-
-  if (Math.abs(delta) > 40) {
-    if (delta < 0) showSlide(currentIndex + 1);
-    if (delta > 0) showSlide(currentIndex - 1);
-  }
-}, { passive: true });
-
-showSlide(0);
+render();

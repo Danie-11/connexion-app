@@ -1,79 +1,86 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Connexion — Des personnes. Des affinités. Une connexion choisie.">
-    <title>Connexion</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="phone-shell">
-      <header class="status-bar" aria-label="État du téléphone">
-        <div class="status-left">10:20</div>
-        <div class="status-center">◔</div>
-        <div class="status-right">
-          <span>5G</span>
-          <span>▣</span>
-          <span>◍</span>
-        </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Connexion — une application de rencontres choisies.">
+  <title>Connexion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app" class="app-shell">
+    <section class="app-screen home-screen is-active" data-screen="home">
+      <div class="home-art" aria-hidden="true"></div>
+      <header class="app-header">
+        <a class="brand" href="#home" data-go="home"><span class="brand-mark">◌</span> Connexion</a>
+        <button class="language" type="button">FR⌄</button>
       </header>
-
-      <main class="screen-stack" aria-live="polite">
-        <section class="slide is-active" aria-label="Écran 1">
-          <img src="images/hero.png" alt="Écran d'accueil Connexion">
-        </section>
-        <section class="slide" aria-label="Écran 2">
-          <img src="images/hero1.png" alt="Section des intentions Connexion">
-        </section>
-        <section class="slide" aria-label="Écran 3">
-          <img src="images/hero2.png" alt="Écran Connexion 2">
-        </section>
-        <section class="slide" aria-label="Écran 4">
-          <img src="images/hero3.png" alt="Écran Connexion 3">
-        </section>
-        <section class="slide" aria-label="Écran 5">
-          <img src="images/hero4.png" alt="Écran Connexion 4">
-        </section>
-        <section class="slide" aria-label="Écran 6">
-          <img src="images/hero5.png" alt="Écran Connexion 5">
-        </section>
-        <section class="slide" aria-label="Écran 7">
-          <img src="images/hero6.png" alt="Écran Connexion 6">
-        </section>
-        <section class="slide" aria-label="Écran 8">
-          <img src="images/hero7.png" alt="Écran Connexion 7">
-        </section>
-      </main>
-
-      <div class="screen-controls" aria-label="Contrôles de navigation">
-        <button class="nav-btn" data-action="prev" aria-label="Écran précédent">←</button>
-        <button class="nav-btn" data-action="next" aria-label="Écran suivant">→</button>
+      <div class="home-content">
+        <p class="script-line">Plus qu’une rencontre,<br>une belle énergie</p>
+        <p class="eyebrow">UNE AUTRE FAÇON DE RENCONTRER</p>
+        <h1>Connexion</h1>
+        <p class="tagline">Des personnes. Des affinités.<br>Une connexion choisie.</p>
+        <p class="home-copy">Une autre façon de rencontrer.<br>Vous choisissez ce que vous partagez,<br>avec qui vous échangez et jusqu’où<br>vous souhaitez aller.</p>
+        <button class="primary-button" type="button" data-go="profile">Créer mon profil <span>→</span></button>
+        <button class="secondary-button" type="button" data-go="login">J’ai déjà un compte <span>→</span></button>
       </div>
+    </section>
 
-      <div class="dots" aria-label="Pagination des écrans">
-        <button class="dot is-active" data-index="0" aria-label="Aller à l'écran 1"></button>
-        <button class="dot" data-index="1" aria-label="Aller à l'écran 2"></button>
-        <button class="dot" data-index="2" aria-label="Aller à l'écran 3"></button>
-        <button class="dot" data-index="3" aria-label="Aller à l'écran 4"></button>
-        <button class="dot" data-index="4" aria-label="Aller à l'écran 5"></button>
-        <button class="dot" data-index="5" aria-label="Aller à l'écran 6"></button>
-        <button class="dot" data-index="6" aria-label="Aller à l'écran 7"></button>
-        <button class="dot" data-index="7" aria-label="Aller à l'écran 8"></button>
+    <section class="app-screen form-screen" data-screen="profile" hidden>
+      <button class="back-button" type="button" data-back>← Retour</button>
+      <div class="form-card">
+        <p class="eyebrow">COMMENÇONS SIMPLEMENT</p>
+        <h2>Comment souhaitez-vous être appelé·e ?</h2>
+        <p class="muted">Votre pseudo sera visible par les personnes avec lesquelles vous choisirez d’échanger.</p>
+        <form data-form="profile">
+          <label for="nickname">Votre pseudo</label>
+          <input id="nickname" name="nickname" type="text" minlength="2" maxlength="30" placeholder="Ex. Camille" required>
+          <button class="primary-button" type="submit">Continuer <span>→</span></button>
+        </form>
       </div>
+    </section>
 
-      <nav class="bottom-nav" aria-label="Navigation de l'application">
-        <button class="bottom-btn" aria-label="Accueil">⌂</button>
-        <button class="bottom-btn" aria-label="Fermer">✕</button>
-        <button class="bottom-btn url-pill" aria-label="Adresse du site">danie-11.github.io</button>
-        <button class="bottom-btn" aria-label="Ajouter">＋</button>
-        <button class="bottom-btn" aria-label="Menu">⋮</button>
-      </nav>
-    </div>
+    <section class="app-screen intentions-screen" data-screen="intentions" hidden>
+      <button class="back-button" type="button" data-back>← Retour</button>
+      <div class="section-heading">
+        <p class="eyebrow">UNE CONNEXION PEUT PRENDRE PLUSIEURS FORMES</p>
+        <h2>Que recherchez-vous<span data-user></span> ?</h2>
+        <p class="muted">Choisissez une ou plusieurs intentions.</p>
+      </div>
+      <div class="intentions-grid">
+        <button class="intention-card" type="button" data-intention="Amour"><span>❤️</span><strong>Amour</strong><small>Une relation amoureuse</small></button>
+        <button class="intention-card" type="button" data-intention="Amitié"><span>🤝</span><strong>Amitié</strong><small>Une véritable relation amicale</small></button>
+        <button class="intention-card" type="button" data-intention="Professionnel"><span>💼</span><strong>Professionnel</strong><small>Travail, entrepreneuriat ou projets</small></button>
+        <button class="intention-card" type="button" data-intention="Centres d’intérêt"><span>🎨</span><strong>Centres d’intérêt</strong><small>Partager une passion</small></button>
+        <button class="intention-card" type="button" data-intention="Projet"><span>🌱</span><strong>Projet</strong><small>Construire quelque chose</small></button>
+        <button class="intention-card" type="button" data-intention="Échange"><span>💬</span><strong>Échange</strong><small>Discuter et faire connaissance</small></button>
+      </div>
+      <button class="primary-button continue-button" type="button" data-go="summary" disabled>Continuer <span>→</span></button>
+    </section>
 
-    <script src="script.js"></script>
-  </body>
+    <section class="app-screen form-screen" data-screen="summary" hidden>
+      <button class="back-button" type="button" data-back>← Retour</button>
+      <div class="form-card summary-card">
+        <p class="eyebrow">VOTRE UNIVERS</p>
+        <h2>Votre profil commence à prendre forme<span data-user></span>.</h2>
+        <p class="muted">Vos choix : <strong data-selections>aucun</strong></p>
+        <button class="primary-button" type="button" data-go="home">Revenir à l’accueil</button>
+      </div>
+    </section>
+
+    <section class="app-screen form-screen" data-screen="login" hidden>
+      <button class="back-button" type="button" data-back>← Retour</button>
+      <div class="form-card">
+        <p class="eyebrow">BIENVENUE</p>
+        <h2>Ravi de vous revoir.</h2>
+        <p class="muted">La connexion à votre compte sera ajoutée dans la prochaine étape.</p>
+        <button class="secondary-button" type="button" data-go="home">Revenir à l’accueil</button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
 </html>
