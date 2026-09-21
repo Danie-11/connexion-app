@@ -1,116 +1,79 @@
 <!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Connexion — Des personnes. Des affinités. Une connexion choisie.">
-  <title>Connexion — Des personnes. Des affinités.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&family=Parisienne&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="#accueil" aria-label="Connexion — accueil">
-      <span class="brand-mark" aria-hidden="true">◌</span>
-      <span>Connexion</span>
-    </a>
-    <button class="language" type="button" aria-label="Langue actuelle : français">FR <span>⌄</span></button>
-  </header>
-
-  <main>
-    <section class="hero" id="accueil">
-      <div class="hero-art" aria-hidden="true"></div>
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <p class="handwritten">Plus qu’une rencontre,<br>une belle énergie</p>
-        <p class="hero-kicker">UNE AUTRE FAÇON DE RENCONTRER</p>
-        <h1>Connexion</h1>
-        <p class="tagline">Des personnes. Des affinités.<br>Une connexion choisie.</p>
-        <p class="intro">Une autre façon de rencontrer.<br>Vous choisissez ce que vous partagez,<br>avec qui vous échangez et jusqu’où<br>vous souhaitez aller.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#experience">Créer mon profil <span>→</span></a>
-          <a class="button button-secondary" href="#experience">J’ai déjà un compte <span>→</span></a>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Connexion — Des personnes. Des affinités. Une connexion choisie.">
+    <title>Connexion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="phone-shell">
+      <header class="status-bar" aria-label="État du téléphone">
+        <div class="status-left">10:20</div>
+        <div class="status-center">◔</div>
+        <div class="status-right">
+          <span>5G</span>
+          <span>▣</span>
+          <span>◍</span>
         </div>
-        <div class="trust-row">
-          <div><span>🔒</span><strong>Confidentialité</strong><small>Vos informations restent protégées.</small></div>
-          <div><span>♡</span><strong>Consentement mutuel</strong><small>Une connexion naît à deux.</small></div>
-          <div><span>🛡</span><strong>Sécurité</strong><small>Vous gardez le contrôle.</small></div>
-        </div>
-        <p class="handwritten bottom-note">Des rencontres<br>qui ont du sens</p>
-      </div>
-    </section>
+      </header>
 
-    <section class="section intentions" id="intentions">
-      <div class="section-heading">
-        <p class="eyebrow">UNE CONNEXION PEUT PRENDRE PLUSIEURS FORMES</p>
-        <h2>Vous choisissez ce que vous recherchez.</h2>
-        <p>Amour, amitié, projet, travail, passions ou simplement une conversation : chaque intention est traitée séparément.</p>
-      </div>
-      <div class="intention-grid">
-        <article class="intention-card"><span>❤️</span><h3>Amour</h3><p>Rencontrer quelqu’un pour une relation amoureuse.</p></article>
-        <article class="intention-card"><span>🤝</span><h3>Amitié</h3><p>Créer une véritable relation amicale.</p></article>
-        <article class="intention-card"><span>💼</span><h3>Professionnel</h3><p>Rencontrer des personnes autour du travail, de l’entrepreneuriat ou de projets.</p></article>
-        <article class="intention-card"><span>🎨</span><h3>Centres d’intérêt</h3><p>Partager une passion ou une activité.</p></article>
-        <article class="intention-card"><span>🌱</span><h3>Projet</h3><p>Trouver quelqu’un avec qui construire quelque chose.</p></article>
-        <article class="intention-card"><span>💬</span><h3>Échange</h3><p>Échanger, discuter et rencontrer des personnes avec lesquelles vous avez des affinités.</p></article>
-      </div>
-    </section>
+      <main class="screen-stack" aria-live="polite">
+        <section class="slide is-active" aria-label="Écran 1">
+          <img src="images/hero.png" alt="Écran d'accueil Connexion">
+        </section>
+        <section class="slide" aria-label="Écran 2">
+          <img src="images/hero1.png" alt="Section des intentions Connexion">
+        </section>
+        <section class="slide" aria-label="Écran 3">
+          <img src="images/hero2.png" alt="Écran Connexion 2">
+        </section>
+        <section class="slide" aria-label="Écran 4">
+          <img src="images/hero3.png" alt="Écran Connexion 3">
+        </section>
+        <section class="slide" aria-label="Écran 5">
+          <img src="images/hero4.png" alt="Écran Connexion 4">
+        </section>
+        <section class="slide" aria-label="Écran 6">
+          <img src="images/hero5.png" alt="Écran Connexion 5">
+        </section>
+        <section class="slide" aria-label="Écran 7">
+          <img src="images/hero6.png" alt="Écran Connexion 6">
+        </section>
+        <section class="slide" aria-label="Écran 8">
+          <img src="images/hero7.png" alt="Écran Connexion 7">
+        </section>
+      </main>
 
-    <section class="section philosophy" id="philosophie">
-      <div>
-        <p class="eyebrow">LA PHILOSOPHIE CONNEXION</p>
-        <h2>L’IA peut ouvrir une porte.<br><em>C’est vous qui décidez de l’ouvrir.</em></h2>
+      <div class="screen-controls" aria-label="Contrôles de navigation">
+        <button class="nav-btn" data-action="prev" aria-label="Écran précédent">←</button>
+        <button class="nav-btn" data-action="next" aria-label="Écran suivant">→</button>
       </div>
-      <p class="large-copy">Connexion analyse les informations que vous choisissez de partager pour identifier des correspondances pertinentes. Elle ne décide pas à votre place, ne révèle pas vos informations privées et ne force jamais une rencontre.</p>
-    </section>
 
-    <section class="section safety" id="securite">
-      <div class="section-heading">
-        <p class="eyebrow">UNE CONNEXION CHOISIE</p>
-        <h2>Vous gardez la main, du début à la suite.</h2>
+      <div class="dots" aria-label="Pagination des écrans">
+        <button class="dot is-active" data-index="0" aria-label="Aller à l'écran 1"></button>
+        <button class="dot" data-index="1" aria-label="Aller à l'écran 2"></button>
+        <button class="dot" data-index="2" aria-label="Aller à l'écran 3"></button>
+        <button class="dot" data-index="3" aria-label="Aller à l'écran 4"></button>
+        <button class="dot" data-index="4" aria-label="Aller à l'écran 5"></button>
+        <button class="dot" data-index="5" aria-label="Aller à l'écran 6"></button>
+        <button class="dot" data-index="6" aria-label="Aller à l'écran 7"></button>
+        <button class="dot" data-index="7" aria-label="Aller à l'écran 8"></button>
       </div>
-      <div class="safety-grid">
-        <div><span>🔒</span><h3>Informations protégées</h3><p>Votre identité et vos informations personnelles ne sont pas révélées automatiquement.</p></div>
-        <div><span>♡</span><h3>Consentement mutuel</h3><p>Une connexion ne devient une vraie connexion que lorsque les deux personnes l’acceptent.</p></div>
-        <div><span>🛡</span><h3>Bloquer ou signaler</h3><p>Vous pouvez prendre vos distances, mettre une conversation en pause ou signaler à tout moment.</p></div>
-      </div>
-    </section>
 
-    <section class="section experience" id="experience">
-      <div class="section-heading">
-        <p class="eyebrow">L’EXPÉRIENCE CONNEXION</p>
-        <h2>Une rencontre commence simplement.</h2>
-        <p>Le site que vous découvrez aujourd’hui présente le concept. L’application viendra ensuite.</p>
-      </div>
-      <div class="steps">
-        <div><b>01</b><span>Créer son profil</span></div>
-        <div><b>02</b><span>Choisir ses intentions</span></div>
-        <div><b>03</b><span>Définir ses attentes</span></div>
-        <div><b>04</b><span>Décrire son univers</span></div>
-        <div><b>05</b><span>Connexion analyse</span></div>
-        <div><b>06</b><span>Découvrir des correspondances</span></div>
-        <div><b>07</b><span>Échanger</span></div>
-      </div>
-      <div class="future-note">
-        <span>✨</span>
-        <p><strong>La suite se construira avec vous.</strong><br>Cette première version pose la maison. L’application viendra ensuite accueillir le matching, les connexions et les conversations.</p>
-      </div>
-    </section>
-  </main>
+      <nav class="bottom-nav" aria-label="Navigation de l'application">
+        <button class="bottom-btn" aria-label="Accueil">⌂</button>
+        <button class="bottom-btn" aria-label="Fermer">✕</button>
+        <button class="bottom-btn url-pill" aria-label="Adresse du site">danie-11.github.io</button>
+        <button class="bottom-btn" aria-label="Ajouter">＋</button>
+        <button class="bottom-btn" aria-label="Menu">⋮</button>
+      </nav>
+    </div>
 
-  <footer class="site-footer">
-    <div class="footer-brand">Connexion</div>
-    <p>Des personnes. Des affinités. Une connexion choisie.</p>
-    <nav aria-label="Pied de page">
-      <a href="#intentions">Intentions</a>
-      <a href="#philosophie">Philosophie</a>
-      <a href="#securite">Sécurité</a>
-    </nav>
-    <small>© <span id="year"></span> Connexion</small>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
