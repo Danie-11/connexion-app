@@ -93,3 +93,55 @@ button{font:inherit;cursor:pointer}
   .screen-home .home-actions{bottom:6.5%;width:86%;gap:8px}
   .screen-home .home-actions button{min-height:52px;padding:13px 18px}
 }
+
+/* Écran 2 — Vos intentions */
+.intentions-screen{min-height:100vh;overflow:hidden}
+.intentions-screen .screen-art{background-image:url("images/hero.png");background-size:cover;background-position:center center}
+.intentions-screen .topbar{padding-top:18px}
+.intentions-screen .mini-brand{font-size:32px}
+.progress{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:4px;width:calc(100% - 46px);max-width:690px;margin:2px auto 0;padding-top:18px}
+.progress-line{position:absolute;left:9%;right:9%;top:28px;height:2px;background:rgba(90,73,62,.24);z-index:0}
+.progress-line span{display:block;width:20%;height:100%;background:#7f604c}
+.progress-step{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:7px;color:rgba(73,65,60,.58);font-size:12px;white-space:nowrap}
+.progress-step i{width:15px;height:15px;border-radius:50%;background:rgba(102,91,83,.34);border:2px solid rgba(255,250,245,.78)}
+.progress-step.active{color:#172e3f;font-weight:600}
+.progress-step.active i{background:#4e514f;border-color:#4e514f}
+.intentions-content{width:min(720px,calc(100% - 34px));margin:0 auto;padding:32px 0 42px;text-align:center}
+.intentions-content h1{font:500 clamp(43px,7vw,70px)/.93 "Cormorant Garamond",serif;margin:8px 0 12px;color:var(--navy)}
+.intentions-intro{font-size:18px;color:#4e5960;margin:0 0 25px}
+.intentions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.intentions-grid .intention-card{position:relative;min-height:245px;padding:17px 16px 18px;text-align:center;border:1px solid rgba(89,72,61,.13);border-radius:25px;background:rgba(255,250,245,.89);color:var(--navy);box-shadow:0 9px 28px rgba(65,45,32,.08);display:flex;flex-direction:column;align-items:center;gap:7px;transition:.18s}
+.intentions-grid .intention-card:hover{transform:translateY(-2px)}
+.intentions-grid .intention-card.is-selected{border:2px solid #7d5a42;background:rgba(247,230,215,.97);box-shadow:0 12px 30px rgba(80,54,39,.13)}
+.intention-image{width:94px;height:94px;border-radius:50%;display:grid;place-items:center;margin-bottom:4px;background-size:cover;background-position:center;color:#6f4d39;font:45px "Cormorant Garamond",serif;border:1px solid rgba(92,73,60,.08)}
+.intention-image.love{background:radial-gradient(circle at 50% 65%,#f1b46e,#efd6c2 58%,#ead5c6)}
+.intention-image.friendship{background:radial-gradient(circle at 50% 65%,#c3b39d,#ead8c8 62%,#d7c6b6)}
+.intention-image.professional{background:linear-gradient(145deg,#d9c9b7,#a8b9b9 48%,#e6d2b8)}
+.intention-image.interests{background:linear-gradient(145deg,#c9a26e,#e2d6bd 55%,#718294)}
+.intention-image.project{background:linear-gradient(145deg,#b7a980,#e8d9c3 50%,#76917a)}
+.intention-image.exchange{background:linear-gradient(145deg,#b4c3ce,#f0d4ad 52%,#7395a7)}
+.intentions-grid .intention-card strong{font:500 27px/1 "Cormorant Garamond",serif}
+.intentions-grid .intention-card small{max-width:185px;color:#5d5a58;line-height:1.25;font-size:13px}
+.intentions-grid .intention-card b{position:absolute;top:15px;right:15px;width:23px;height:23px;border:2px solid #173044;border-radius:50%;background:transparent}
+.intentions-grid .intention-card.is-selected b{border-color:#7b563e;background:#7b563e;box-shadow:inset 0 0 0 5px #fff8f1}
+.intention-continue{margin:22px auto 0;max-width:420px}
+@media(max-width:600px){
+  .progress{width:calc(100% - 22px);gap:0}
+  .progress-step{font-size:10px}
+  .progress-step i{width:13px;height:13px}
+  .progress-line{left:8%;right:8%;top:27px}
+  .intentions-content{width:calc(100% - 22px);padding-top:24px}
+  .intentions-content h1{font-size:43px}
+  .intentions-intro{font-size:16px;margin-bottom:17px}
+  .intentions-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .intentions-grid .intention-card{min-height:184px;padding:12px 9px}
+  .intention-image{width:68px;height:68px;font-size:34px}
+  .intentions-grid .intention-card strong{font-size:24px}
+  .intentions-grid .intention-card small{font-size:11.5px}
+  .intentions-grid .intention-card b{top:10px;right:10px;width:20px;height:20px}
+}
+@media(max-width:380px){
+  .progress-step span{font-size:9px}
+  .intentions-content h1{font-size:39px}
+  .intentions-grid .intention-card{min-height:175px}
+}
