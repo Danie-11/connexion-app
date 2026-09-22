@@ -10,8 +10,8 @@ button{font:inherit;cursor:pointer}
 .app-shell{width:min(100%,760px);min-height:100vh;margin:auto;background:var(--cream);box-shadow:var(--shadow);overflow:hidden}
 .app-screen{position:relative;min-height:100vh;isolation:isolate}
 .app-screen[hidden]{display:none!important}
-.screen-art{position:absolute;inset:0;z-index:-2;background-image:linear-gradient(rgba(255,245,235,.12),rgba(255,245,235,.08)),url("images/hero.png");background-size:cover;background-position:center}
-.app-screen::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(255,248,240,.70) 0%,rgba(255,248,240,.18) 32%,rgba(255,248,240,.10) 65%,rgba(255,248,240,.58) 100%);pointer-events:none}
+.screen-art{position:absolute;inset:0;z-index:-2;background-image:url("images/hero.png");background-size:cover;background-position:center;background-repeat:no-repeat}
+.app-screen::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(255,248,240,.06) 0%,rgba(255,248,240,0) 70%,rgba(255,248,240,.16) 100%);pointer-events:none}
 .topbar{position:relative;z-index:3;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:18px 24px}
 .home-topbar{position:absolute;top:0;left:0;right:0}
 .brand,.mini-brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--navy);font:600 34px "Cormorant Garamond",serif}
@@ -77,4 +77,19 @@ button{font:inherit;cursor:pointer}
   .type-grid{grid-template-columns:1fr}
   .type-card{min-height:112px}
   .value-list div,.security-list div{padding:15px}
+}
+
+/* Accueil : l'image porte déjà tout l'univers et le logo. Le code ajoute uniquement les vrais boutons. */
+.screen-home{min-height:100vh;overflow:hidden}
+.screen-home .home-art{position:absolute;inset:0;background-image:url("images/hero.png");background-repeat:no-repeat;background-position:center top;background-size:100% 100%;z-index:0}
+.screen-home .home-actions{position:absolute;z-index:3;left:50%;bottom:7.5%;transform:translateX(-50%);width:min(560px,88%);display:flex;flex-direction:column;align-items:center;gap:10px}
+.screen-home .primary-button,.screen-home .ghost-button{width:100%;max-width:560px}
+.screen-home .primary-button{background:#8d6549;color:#fff;box-shadow:0 10px 24px rgba(70,45,31,.18)}
+.screen-home .ghost-button{background:rgba(255,250,245,.88);color:var(--navy);border:1px solid rgba(121,86,63,.38)}
+.screen-home .home-actions button{min-height:54px}
+@media(max-width:560px){
+  .screen-home{min-height:100vh}
+  .screen-home .home-art{background-size:100% 100%}
+  .screen-home .home-actions{bottom:6.5%;width:86%;gap:8px}
+  .screen-home .home-actions button{min-height:52px;padding:13px 18px}
 }
