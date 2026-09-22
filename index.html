@@ -16,30 +16,56 @@
   <section class="app-screen screen-home is-active" data-screen="home">
     <div class="home-art" aria-hidden="true"></div>
     <div class="home-actions">
-      <button class="primary-button" type="button" data-go="universe">Découvrir Connexion <span>→</span></button>
+      <button class="primary-button" type="button" data-go="intentions">Découvrir Connexion <span>→</span></button>
       <button class="ghost-button" type="button" data-go="types">Voir les connexions <span>→</span></button>
     </div>
   </section>
 
-  <section class="app-screen content-screen" data-screen="universe">
+  <section class="app-screen intentions-screen" data-screen="intentions" hidden>
     <div class="screen-art"></div>
     <header class="topbar">
       <button class="back-button" type="button" data-back>← <span>Retour</span></button>
-      <div class="mini-brand">Conne<span class="logo-x">X</span>ion</div>
+      <div class="mini-brand">Connexion</div>
       <button class="language" type="button">FR⌄</button>
     </header>
-    <div class="screen-content universe-content">
-      <p class="eyebrow">L’UNIVERS CONNEXION</p>
-      <h1>Un espace bienveillant<br>pour des connexions authentiques</h1>
+
+    <div class="progress">
+      <div class="progress-line"><span></span></div>
+      <div class="progress-step active"><i></i><span>Vos intentions</span></div>
+      <div class="progress-step"><i></i><span>Votre situation</span></div>
+      <div class="progress-step"><i></i><span>Votre identité</span></div>
+      <div class="progress-step"><i></i><span>Votre avatar</span></div>
+      <div class="progress-step"><i></i><span>Votre profil</span></div>
+    </div>
+
+    <div class="intentions-content">
+      <p class="eyebrow">VOTRE CONNEXION COMMENCE ICI</p>
+      <h1>Qu’est-ce que vous recherchez<br>aujourd’hui ?</h1>
       <div class="divider"></div>
-      <div class="value-list">
-        <div><span>♡</span><strong>Humain</strong><small>La personne avant l’algorithme.</small></div>
-        <div><span>◌</span><strong>Authentique</strong><small>Pas de personnage à jouer.</small></div>
-        <div><span>✦</span><strong>Positif</strong><small>Créer des échanges qui font du bien.</small></div>
-        <div><span>∞</span><strong>Ensemble</strong><small>Avancer chacun à son rythme.</small></div>
+      <p class="intentions-intro">Vous pouvez choisir plusieurs réponses.</p>
+
+      <div class="intentions-grid">
+        <button class="intention-card" type="button" data-type="Amour" aria-pressed="false">
+          <span class="intention-image love">♡</span><strong>Amour</strong><small>Rencontrer quelqu’un pour une relation amoureuse.</small><b></b>
+        </button>
+        <button class="intention-card" type="button" data-type="Amitié" aria-pressed="false">
+          <span class="intention-image friendship">♡</span><strong>Amitié</strong><small>Créer une véritable relation amicale.</small><b></b>
+        </button>
+        <button class="intention-card" type="button" data-type="Professionnel" aria-pressed="false">
+          <span class="intention-image professional">⌁</span><strong>Professionnel</strong><small>Rencontrer des personnes autour du travail, de l’entrepreneuriat ou de projets.</small><b></b>
+        </button>
+        <button class="intention-card" type="button" data-type="Centres d’intérêt" aria-pressed="false">
+          <span class="intention-image interests">✧</span><strong>Centres d’intérêt</strong><small>Partager une passion ou une activité.</small><b></b>
+        </button>
+        <button class="intention-card" type="button" data-type="Projet" aria-pressed="false">
+          <span class="intention-image project">⌁</span><strong>Projet</strong><small>Trouver quelqu’un avec qui construire quelque chose.</small><b></b>
+        </button>
+        <button class="intention-card" type="button" data-type="Échange" aria-pressed="false">
+          <span class="intention-image exchange">◌</span><strong>Échange</strong><small>Échanger, discuter et rencontrer des personnes avec lesquelles vous avez des affinités.</small><b></b>
+        </button>
       </div>
-      <p class="hand closing-note">Des rencontres<br>qui ont du sens ♡</p>
-      <button class="primary-button next-button" type="button" data-go="types">Découvrir les connexions <span>→</span></button>
+
+      <button class="primary-button intention-continue" type="button" data-go="how" disabled>Continuer <span>→</span></button>
     </div>
   </section>
 
