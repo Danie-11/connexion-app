@@ -145,3 +145,14 @@ button{font:inherit;cursor:pointer}
   .intentions-content h1{font-size:39px}
   .intentions-grid .intention-card{min-height:175px}
 }
+
+/* Page 2 — référence de sélection */
+.intentions-screen .screen-art{background-position:center center}
+.intentions-screen .progress-step{pointer-events:none;cursor:default}
+.intentions-screen .intentions-content{padding-top:30px}
+.intentions-screen .intention-card{cursor:pointer;-webkit-tap-highlight-color:transparent}
+.intentions-screen .intention-card:focus-visible{outline:3px solid rgba(185,133,53,.55);outline-offset:3px}
+.intentions-screen .intention-continue:disabled{opacity:.58;cursor:not-allowed;box-shadow:none}
+.situation-content{width:min(680px,calc(100% - 34px));margin:0 auto;padding:32px 0;text-align:center}
+.situation-content h1{font:500 clamp(43px,7vw,70px)/.93 "Cormorant Garamond",serif;margin:8px 0 12px}
+.situation-actions{margin-top:28px}
