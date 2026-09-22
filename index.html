@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Connexion — une application de rencontres choisies.">
+  <meta name="description" content="Connexion — des personnes, des affinités, une connexion choisie.">
   <title>Connexion</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,76 +11,118 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main id="app" class="app-shell">
-    <section class="app-screen home-screen is-active" data-screen="home">
-      <div class="home-art" aria-hidden="true"></div>
-      <header class="app-header">
-        <a class="brand" href="#home" data-go="home"><span class="brand-mark">◌</span> Connexion</a>
-        <button class="language" type="button">FR⌄</button>
-      </header>
-      <div class="home-content">
-        <p class="script-line">Plus qu’une rencontre,<br>une belle énergie</p>
-        <p class="eyebrow">UNE AUTRE FAÇON DE RENCONTRER</p>
-        <h1>Connexion</h1>
+<main id="app" class="app-shell">
+
+  <section class="app-screen screen-home is-active" data-screen="home">
+    <div class="screen-art"></div>
+    <header class="topbar home-topbar">
+      <a class="brand" href="#" data-go="home" aria-label="Accueil Connexion">
+        <span class="brand-x" aria-hidden="true"><i></i><i></i></span>
+        <span>Connexion</span>
+      </a>
+      <button class="language" type="button" aria-label="Langue française">FR⌄</button>
+    </header>
+    <div class="home-overlay">
+      <p class="hand top-note">Plus qu’une rencontre,<br>une belle énergie</p>
+      <div class="home-center">
+        <div class="logo-title">Conne<span class="logo-x">X</span>ion</div>
         <p class="tagline">Des personnes. Des affinités.<br>Une connexion choisie.</p>
         <p class="home-copy">Une autre façon de rencontrer.<br>Vous choisissez ce que vous partagez,<br>avec qui vous échangez et jusqu’où<br>vous souhaitez aller.</p>
-        <button class="primary-button" type="button" data-go="profile">Créer mon profil <span>→</span></button>
-        <button class="secondary-button" type="button" data-go="login">J’ai déjà un compte <span>→</span></button>
+        <div class="home-actions">
+          <button class="primary-button" type="button" data-go="universe">Découvrir Connexion <span>→</span></button>
+          <button class="ghost-button" type="button" data-go="types">Voir les connexions <span>→</span></button>
+        </div>
       </div>
-    </section>
+      <p class="hand bottom-note">Des rencontres<br>qui ont du sens ♡</p>
+    </div>
+  </section>
 
-    <section class="app-screen form-screen" data-screen="profile" hidden>
-      <button class="back-button" type="button" data-back>← Retour</button>
-      <div class="form-card">
-        <p class="eyebrow">COMMENÇONS SIMPLEMENT</p>
-        <h2>Comment souhaitez-vous être appelé·e ?</h2>
-        <p class="muted">Votre pseudo sera visible par les personnes avec lesquelles vous choisirez d’échanger.</p>
-        <form data-form="profile">
-          <label for="nickname">Votre pseudo</label>
-          <input id="nickname" name="nickname" type="text" minlength="2" maxlength="30" placeholder="Ex. Camille" required>
-          <button class="primary-button" type="submit">Continuer <span>→</span></button>
-        </form>
+  <section class="app-screen content-screen" data-screen="universe">
+    <div class="screen-art"></div>
+    <header class="topbar">
+      <button class="back-button" type="button" data-back>← <span>Retour</span></button>
+      <div class="mini-brand">Conne<span class="logo-x">X</span>ion</div>
+      <button class="language" type="button">FR⌄</button>
+    </header>
+    <div class="screen-content universe-content">
+      <p class="eyebrow">L’UNIVERS CONNEXION</p>
+      <h1>Un espace bienveillant<br>pour des connexions authentiques</h1>
+      <div class="divider"></div>
+      <div class="value-list">
+        <div><span>♡</span><strong>Humain</strong><small>La personne avant l’algorithme.</small></div>
+        <div><span>◌</span><strong>Authentique</strong><small>Pas de personnage à jouer.</small></div>
+        <div><span>✦</span><strong>Positif</strong><small>Créer des échanges qui font du bien.</small></div>
+        <div><span>∞</span><strong>Ensemble</strong><small>Avancer chacun à son rythme.</small></div>
       </div>
-    </section>
+      <p class="hand closing-note">Des rencontres<br>qui ont du sens ♡</p>
+      <button class="primary-button next-button" type="button" data-go="types">Découvrir les connexions <span>→</span></button>
+    </div>
+  </section>
 
-    <section class="app-screen intentions-screen" data-screen="intentions" hidden>
-      <button class="back-button" type="button" data-back>← Retour</button>
-      <div class="section-heading">
-        <p class="eyebrow">UNE CONNEXION PEUT PRENDRE PLUSIEURS FORMES</p>
-        <h2>Que recherchez-vous<span data-user></span> ?</h2>
-        <p class="muted">Choisissez une ou plusieurs intentions.</p>
+  <section class="app-screen content-screen" data-screen="types">
+    <div class="screen-art"></div>
+    <header class="topbar">
+      <button class="back-button" type="button" data-back>← <span>Retour</span></button>
+      <div class="mini-brand">Conne<span class="logo-x">X</span>ion</div>
+      <button class="language" type="button">FR⌄</button>
+    </header>
+    <div class="screen-content types-content">
+      <p class="eyebrow">UNE CONNEXION POUR CHAQUE CHEMIN</p>
+      <h1>Vous pouvez venir ici<br>pour différentes raisons.</h1>
+      <div class="type-grid">
+        <button class="type-card" type="button" data-type="Amour"><span>♡</span><strong>Amour</strong><small>Des affinités sincères</small></button>
+        <button class="type-card" type="button" data-type="Amitié"><span>♧</span><strong>Amitié</strong><small>Des liens durables</small></button>
+        <button class="type-card" type="button" data-type="Professionnel"><span>▣</span><strong>Professionnel</strong><small>Des opportunités réelles</small></button>
+        <button class="type-card" type="button" data-type="Centres d’intérêt"><span>◈</span><strong>Centres d’intérêt</strong><small>Des passions communes</small></button>
+        <button class="type-card" type="button" data-type="Projet"><span>☆</span><strong>Projet</strong><small>Des idées qui grandissent</small></button>
+        <button class="type-card" type="button" data-type="Échange"><span>◌</span><strong>Échange</strong><small>Des conversations choisies</small></button>
       </div>
-      <div class="intentions-grid">
-        <button class="intention-card" type="button" data-intention="Amour"><span>❤️</span><strong>Amour</strong><small>Une relation amoureuse</small></button>
-        <button class="intention-card" type="button" data-intention="Amitié"><span>🤝</span><strong>Amitié</strong><small>Une véritable relation amicale</small></button>
-        <button class="intention-card" type="button" data-intention="Professionnel"><span>💼</span><strong>Professionnel</strong><small>Travail, entrepreneuriat ou projets</small></button>
-        <button class="intention-card" type="button" data-intention="Centres d’intérêt"><span>🎨</span><strong>Centres d’intérêt</strong><small>Partager une passion</small></button>
-        <button class="intention-card" type="button" data-intention="Projet"><span>🌱</span><strong>Projet</strong><small>Construire quelque chose</small></button>
-        <button class="intention-card" type="button" data-intention="Échange"><span>💬</span><strong>Échange</strong><small>Discuter et faire connaissance</small></button>
-      </div>
-      <button class="primary-button continue-button" type="button" data-go="summary" disabled>Continuer <span>→</span></button>
-    </section>
+      <button class="primary-button next-button" type="button" data-go="how">Comment ça fonctionne <span>→</span></button>
+    </div>
+  </section>
 
-    <section class="app-screen form-screen" data-screen="summary" hidden>
-      <button class="back-button" type="button" data-back>← Retour</button>
-      <div class="form-card summary-card">
-        <p class="eyebrow">VOTRE UNIVERS</p>
-        <h2>Votre profil commence à prendre forme<span data-user></span>.</h2>
-        <p class="muted">Vos choix : <strong data-selections>aucun</strong></p>
-        <button class="primary-button" type="button" data-go="home">Revenir à l’accueil</button>
+  <section class="app-screen content-screen" data-screen="how">
+    <div class="screen-art"></div>
+    <header class="topbar">
+      <button class="back-button" type="button" data-back>← <span>Retour</span></button>
+      <div class="mini-brand">Conne<span class="logo-x">X</span>ion</div>
+      <button class="language" type="button">FR⌄</button>
+    </header>
+    <div class="screen-content how-content">
+      <p class="eyebrow">SIMPLE, HUMAIN ET SÉCURISÉ</p>
+      <h1>Une connexion se construit<br>à votre rythme.</h1>
+      <div class="steps">
+        <div class="step"><span>1</span><div><strong>Créez votre profil</strong><small>Vous choisissez ce que vous souhaitez partager.</small></div></div>
+        <div class="step"><span>2</span><div><strong>Découvrez</strong><small>Connexion vous présente des personnes pertinentes.</small></div></div>
+        <div class="step"><span>3</span><div><strong>Choisissez</strong><small>Vous décidez si vous souhaitez découvrir cette connexion.</small></div></div>
+        <div class="step"><span>4</span><div><strong>Échangez</strong><small>La conversation commence seulement quand le choix est mutuel.</small></div></div>
       </div>
-    </section>
+      <button class="primary-button next-button" type="button" data-go="security">Voir notre engagement sécurité <span>→</span></button>
+    </div>
+  </section>
 
-    <section class="app-screen form-screen" data-screen="login" hidden>
-      <button class="back-button" type="button" data-back>← Retour</button>
-      <div class="form-card">
-        <p class="eyebrow">BIENVENUE</p>
-        <h2>Ravi de vous revoir.</h2>
-        <p class="muted">La connexion à votre compte sera ajoutée dans la prochaine étape.</p>
-        <button class="secondary-button" type="button" data-go="home">Revenir à l’accueil</button>
+  <section class="app-screen content-screen" data-screen="security">
+    <div class="screen-art"></div>
+    <header class="topbar">
+      <button class="back-button" type="button" data-back>← <span>Retour</span></button>
+      <div class="mini-brand">Conne<span class="logo-x">X</span>ion</div>
+      <button class="language" type="button">FR⌄</button>
+    </header>
+    <div class="screen-content security-content">
+      <p class="eyebrow">VOTRE SÉCURITÉ EST ESSENTIELLE</p>
+      <h1>Vous gardez le contrôle<br>à chaque étape.</h1>
+      <div class="security-list">
+        <div><span>▣</span><strong>Des échanges protégés</strong><small>Les conversations restent dans Connexion au départ.</small></div>
+        <div><span>◉</span><strong>Vous gardez le contrôle</strong><small>Vous choisissez ce que vous partagez et avec qui.</small></div>
+        <div><span>⌁</span><strong>Vos données sont confidentielles</strong><small>Les informations privées ne sont pas révélées automatiquement.</small></div>
+        <div><span>♡</span><strong>Une communauté bienveillante</strong><small>Pause, blocage et signalement restent accessibles.</small></div>
       </div>
-    </section>
-  </main>
-  <script src="script.js"></script>
+      <p class="hand security-note">Un espace sûr<br>pour être vous ♡</p>
+      <button class="primary-button next-button" type="button" data-go="home">Revenir à l’accueil <span>↗</span></button>
+    </div>
+  </section>
+
+</main>
+<script src="script.js"></script>
 </body>
 </html>
