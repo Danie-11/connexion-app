@@ -1,56 +1,40 @@
-const screens = [...document.querySelectorAll('[data-screen]')];
-const state = { screen: 'home', nickname: '', intentions: new Set() };
-const history = [];
+const screens=[...document.querySelectorAll("[data-screen]")];
+const state={screen:"home",history:[],types:new Set()};
 
-function render() {
-  screens.forEach((screen) => {
-    const active = screen.dataset.screen === state.screen;
-    screen.hidden = !active;
-    screen.classList.toggle('is-active', active);
+function render(){
+  screens.forEach(s=>{
+    const active=s.dataset.screen===state.screen;
+    s.hidden=!active;
+    s.classList.toggle("is-active",active);
   });
-  document.querySelectorAll('[data-user]').forEach((element) => {
-    element.textContent = state.nickname ? `, ${state.nickname}` : '';
+  document.querySelectorAll(".type-card").forEach(card=>{
+    const selected=state.types.has(card.dataset.type);
+    card.classList.toggle("is-selected",selected);
+    card.setAttribute("aria-pressed",String(selected));
   });
-  const selections = document.querySelector('[data-selections]');
-  if (selections) selections.textContent = state.intentions.size ? [...state.intentions].join(', ') : 'aucun';
-  document.querySelectorAll('.intention-card').forEach((card) => {
-    card.classList.toggle('is-selected', state.intentions.has(card.dataset.intention));
-    card.setAttribute('aria-pressed', state.intentions.has(card.dataset.intention));
-  });
-  const continueButton = document.querySelector('.continue-button');
-  if (continueButton) continueButton.disabled = state.intentions.size === 0;
 }
 
-function goTo(screen, addHistory = true) {
-  if (state.screen === screen) return;
-  if (addHistory) history.push(state.screen);
-  state.screen = screen;
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+function goTo(name,push=true){
+  if(!document.querySelector('[data-screen="'+name+'"]')) return;
+  if(state.screen===name) return;
+  if(push) state.history.push(state.screen);
+  state.screen=name;
+  window.scrollTo({top:0,behavior:"smooth"});
   render();
 }
 
-document.addEventListener('click', (event) => {
-  const target = event.target.closest('[data-go]');
-  if (target) goTo(target.dataset.go);
-  if (event.target.closest('[data-back]')) {
-    goTo(history.pop() || 'home', false);
+document.addEventListener("click",e=>{
+  const go=e.target.closest("[data-go]");
+  if(go){e.preventDefault();goTo(go.dataset.go);return;}
+  if(e.target.closest("[data-back]")){
+    goTo(state.history.pop()||"home",false);
   }
-});
-
-document.querySelector('[data-form="profile"]')?.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const formData = new FormData(event.currentTarget);
-  state.nickname = String(formData.get('nickname')).trim();
-  goTo('intentions');
-});
-
-document.querySelectorAll('.intention-card').forEach((card) => {
-  card.addEventListener('click', () => {
-    const intention = card.dataset.intention;
-    if (state.intentions.has(intention)) state.intentions.delete(intention);
-    else state.intentions.add(intention);
+  const type=e.target.closest("[data-type]");
+  if(type){
+    const value=type.dataset.type;
+    if(state.types.has(value)) state.types.delete(value); else state.types.add(value);
     render();
-  });
+  }
 });
 
 render();
