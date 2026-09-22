@@ -65,7 +65,7 @@
         </button>
       </div>
 
-      <button class="primary-button intention-continue" type="button" data-go="how" disabled>Continuer <span>→</span></button>
+      <button class="primary-button intention-continue" type="button" data-go="situation" disabled>Continuer <span>→</span></button>
     </div>
   </section>
 
@@ -132,7 +132,31 @@
     </div>
   </section>
 
-</main>
+<section class="app-screen situation-screen" data-screen="situation" hidden>
+  <div class="screen-art"></div>
+  <header class="topbar">
+    <button class="back-button" type="button" data-back>← <span>Retour</span></button>
+    <div class="mini-brand">Connexion</div>
+    <button class="language" type="button">FR⌄</button>
+  </header>
+  <div class="progress">
+    <div class="progress-line"><span style="width:40%"></span></div>
+    <div class="progress-step"><i></i><span>Vos intentions</span></div>
+    <div class="progress-step active"><i></i><span>Votre situation</span></div>
+    <div class="progress-step"><i></i><span>Votre identité</span></div>
+    <div class="progress-step"><i></i><span>Votre avatar</span></div>
+    <div class="progress-step"><i></i><span>Votre profil</span></div>
+  </div>
+  <div class="situation-content">
+    <p class="eyebrow">VOTRE SITUATION</p>
+    <h1>Parlez-nous de votre<br>situation actuelle.</h1>
+    <div class="divider"></div>
+    <p class="intentions-intro">Quelques informations suffisent pour que Connexion vous propose des rencontres pertinentes.</p>
+    <div class="situation-actions">
+      <button class="primary-button" type="button">Continuer <span>→</span></button>
+    </div>
+  </div>
+</section></main>
 <script src="script.js"></script>
 </body>
 </html>
