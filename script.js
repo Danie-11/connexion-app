@@ -7,13 +7,14 @@ function render(){
     s.hidden=!active;
     s.classList.toggle("is-active",active);
   });
-  document.querySelectorAll(".type-card").forEach(card=>{
+  document.querySelectorAll(".intention-card").forEach(card=>{
     const selected=state.types.has(card.dataset.type);
     card.classList.toggle("is-selected",selected);
     card.setAttribute("aria-pressed",String(selected));
   });
+  const next=document.querySelector(".intention-continue");
+  if(next) next.disabled=state.types.size===0;
 }
-
 function goTo(name,push=true){
   if(!document.querySelector('[data-screen="'+name+'"]')) return;
   if(state.screen===name) return;
@@ -21,6 +22,20 @@ function goTo(name,push=true){
   state.screen=name;
   window.scrollTo({top:0,behavior:"smooth"});
   render();
+}
+document.addEventListener("click",e=>{
+  const go=e.target.closest("[data-go]");
+  if(go){e.preventDefault();goTo(go.dataset.go);return;}
+  if(e.target.closest("[data-back]")){goTo(state.history.pop()||"home",false);return;}
+  const card=e.target.closest("[data-type]");
+  if(card){
+    const value=card.dataset.type;
+    if(state.types.has(value)) state.types.delete(value); else state.types.add(value);
+    render();
+  }
+});
+render();
+
 }
 
 document.addEventListener("click",e=>{
